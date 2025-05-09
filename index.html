@@ -1,74 +1,241 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banco de dados</title>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+
+        .navbar-dark {
+            background-color: #212529;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: #f8c300;
+        }
+
+        .navbar-brand:hover,
+        .nav-link:hover {
+            color: #ffc107;
+        }
+
+        .card {
+            background-color: #212529;
+            color: #f8f9fa;
+            border-radius: 15px;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-header {
+            background-color: #f8c300;
+            color: #212529;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .card-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-body {
+            background-color: #343a40;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .card-body p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .technologies {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .technologies span {
+            background-color: #f8c300;
+            color: #212529;
+            margin: 5px;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .card-footer {
+            background-color: #212529;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .card-footer a {
+            color: #f8c300;
+            font-size: 1.2rem;
+            margin: 0 10px;
+        }
+
+        .card-footer a:hover {
+            color: #ffc107;
+        }
+
+        /* Rodapé com ícones de tecnologia */
+        footer {
+            background-color: #212529;
+            color: #f8f9fa;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer a {
+            color: #f8c300;
+        }
+
+        footer a:hover {
+            color: #ffc107;
+        }
+
+        .footer-icons img {
+            width: 40px;
+            margin: 0 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-icons img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Animação do footer */
+        footer {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
+
 <body class="bg-light text-dark">
-   <header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#home">Banco de dados</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="whatsdatabase.html">O que é banco de dados?</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="difference.html">Diferença entre SQL e NoSQL</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="examples.html">Exemplos</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#home">Inicio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="whatsdatabase.html">O que é banco de dados?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="difference.html">Diferença entre SQL e NoSQL</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="examples.html">Exemplos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-    <section>
-        <div class="container mt-5">
-  <div class="card shadow-lg rounded">
-    <div class="card-body">
-      <h5 class="card-title">O que é um Banco de Dados?</h5>
-      <p class="card-text">
-        É um conjunto organizado de dados estruturados, armazenados eletronicamente, que permite fácil acesso e gerenciamento das informações.
-      </p>
-      <a href="whatsdatabase.html" class="btn btn-primary">Saiba mais</a>
-    </div>
-  </div>
-</div>
-
-<div class="container mt-5">
-  <div class="card shadow-lg rounded">
-    <div class="card-body">
-      <h5 class="card-title">Diferença entre SQL e NOSQL</h5>
-      <p class="card-text">
-        SQL e um banco de dados relacional e NOSQL é um banco de dados nao relacional
-      </p>
-      <a href="difference.html" class="btn btn-primary">Saiba mais</a>
-    </div>
-  </div>
-</div>
-
-<div class="container mt-5">
-  <div class="card shadow-lg rounded">
-    <div class="card-body">
-      <h5 class="card-title">Exemplos de SQL e NOSQL</h5>
-      <p class="card-text">
-        Veja um exemplo de SQL e NOSQL!!
-      </p>
-      <a href="examples.html" class="btn btn-primary">Saiba mais</a>
-    </div>
-  </div>
-</div>
+    <section class="container my-5">
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-lg">
+                    <div class="card-header">
+                        <h3>Mateus</h3>
+                        <p>Full Stack Developer</p>
+                    </div>
+                    <div class="card-body">
+                        <p>Olá, sou Mateus, um desenvolvedor Full Stack apaixonado por criar soluções web completas.
+                            Tenho experiência no desenvolvimento de interfaces e back-end, sempre buscando a melhor
+                            performance e experiência para o usuário. Utilizo as tecnologias mais modernas para entregar
+                            produtos de qualidade.</p>
+                        <div class="technologies">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Bootstrap</span>
+                            <span>Tailwind</span>
+                            <span>Spring Boot</span>
+                            <span>Express</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/mateus" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/mateus/" target="_blank"><i class="fab fa-linkedin"></i>
+                            LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-lg">
+                    <div class="card-header">
+                        <h3>Davi Lobo</h3>
+                        <p>Full Stack Developer</p>
+                    </div>
+                    <div class="card-body">
+                        <p>Sou Davi Lobo, um desenvolvedor Full Stack focado em criar soluções web robustas e
+                            escaláveis. Tenho experiência tanto no front-end quanto no back-end, e estou sempre buscando
+                            inovar e otimizar os processos. Trabalhei com várias tecnologias para criar sistemas
+                            dinâmicos e de alto desempenho.</p>
+                        <div class="technologies">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Bootstrap</span>
+                            <span>Laravel</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/davilobo" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/davilobo/" target="_blank"><i class="fab fa-linkedin"></i>
+                            LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <footer>
+        <p>Desenvolvido com <span style="color: #f8c300;">HTML</span>, <span style="color: #2965f1;">CSS</span>, <span
+                style="color: #563d7c;">JavaScript</span>, <span style="color: #563d7c;">Bootstrap</span>, </p>
+
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 </body>
+
 </html>
